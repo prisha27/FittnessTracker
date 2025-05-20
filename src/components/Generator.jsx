@@ -83,10 +83,10 @@ description={"Select the workout you want to start with"} />
 
   <Header index={'02'} title={'Lock On Targets'}
 description={"Select the muscles judged for annihilation."} />
-
+<div className='px-8'>
 <div className='bg-slate-950 border border-green-400 flex flex-col
-rounded-lg px-8'>
-<button onClick={toggleModal} className='cursor-pointer relative flex py-3 px-6 items-center justify-center'>
+rounded-lg'>
+<button onClick={toggleModal} className=' mx-auto cursor-pointer relative  flex py-3 px-6 items-center justify-center'>
     <p className='capitalize'>{muscles.length == 0 ? 'Select Muscle Group' : muscles.join(', ')}</p>
     <i className="fa-solid absolute right-2 top-0.25 translate-y-1/2 fa-caret-down"></i>
 </button>
@@ -104,6 +104,7 @@ rounded-lg px-8'>
                         })}
                     </div>
                 )}
+            </div>
             </div>
   <Header index={'03'} title={'Become Juggernaut'}
 description={"Select Your Ultimate Objective"} />
