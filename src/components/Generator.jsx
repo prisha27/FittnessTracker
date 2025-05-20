@@ -55,10 +55,11 @@ export default function Generator(props) {
   return (
    <SectionWrapper header={"generate your workout"} 
    title={['It\'s', 'Huge', 'o\'clock']}>
+
                 <Header index={'01'} title={'Pick Your Position'}
 description={"Select the workout you want to start with"} />
 
-<div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
+<div className='grid grid-cols-2 sm:grid-cols-4 gap-4 px-8'>
 
 
 {Object.keys(WORKOUTS).map((type, typeIndex) => {
@@ -84,13 +85,13 @@ description={"Select the workout you want to start with"} />
 description={"Select the muscles judged for annihilation."} />
 
 <div className='bg-slate-950 border border-green-400 flex flex-col
-rounded-lg'>
-<button onClick={toggleModal} className='cursor-pointer relative flex py-3 items-center justify-center'>
+rounded-lg px-8'>
+<button onClick={toggleModal} className='cursor-pointer relative flex py-3 px-6 items-center justify-center'>
     <p className='capitalize'>{muscles.length == 0 ? 'Select Muscle Group' : muscles.join(', ')}</p>
     <i className="fa-solid absolute right-2 top-0.25 translate-y-1/2 fa-caret-down"></i>
 </button>
 {showModal && (
-    <div className='flex flex-col p-3'> 
+    <div className='flex flex-col p-4 '> 
     {(poison === 'individual'? WORKOUTS[poison] : Object.keys(WORKOUTS[poison]))
     .map((muscleGroup, muscleGroupIndex) => {
         return (
@@ -107,7 +108,7 @@ rounded-lg'>
   <Header index={'03'} title={'Become Juggernaut'}
 description={"Select Your Ultimate Objective"} />
 
-<div className='grid grid-cols-3 gap-4'>
+<div className='grid grid-cols-3 gap-4 px-8'>
 
 
 
