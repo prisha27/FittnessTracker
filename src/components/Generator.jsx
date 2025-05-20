@@ -129,7 +129,7 @@ description={"Select Your Ultimate Objective"} />
 })}
 </div>
 
-<Button func={updateWorkout} text={"Formulate"} className='mt-6'></Button>
+<Button onClick={updateWorkout} text={"Formulate"} className='mt-6'></Button>
 
    </SectionWrapper>
 
