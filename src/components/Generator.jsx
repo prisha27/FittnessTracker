@@ -20,7 +20,7 @@ function Header(props) {
 }
 export default function Generator(props) {
          const [showModal, setShowModal] =  useState(false)
-         const {muscles, setMuscles, poison,setPoison,goals,setGoals,updateWorkout} = props
+         const {muscles, setMuscles, poison,setPoison,goals,setGoals,updateWorkout,scrollToWorkout} = props
 
         function toggleModal () {
             setShowModal(!showModal)
@@ -131,7 +131,7 @@ description={"Select Your Ultimate Objective"} />
 })}
 </div>
 
-<Button onClick={updateWorkout} text={"Formulate"} className='mt-6'></Button>
+<Button onClick={updateWorkout } text={"Formulate"} className='mt-6'></Button>
 
    </SectionWrapper>
 

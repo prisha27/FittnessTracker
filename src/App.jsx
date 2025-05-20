@@ -1,4 +1,4 @@
-import { useState,useRef } from 'react'
+import { useState,useRef,useEffect } from 'react'
 import Workout from './components/Workout'
 import Hero from './components/Hero'
 import Generator from './components/Generator'
@@ -12,6 +12,7 @@ function App() {
          const [goals, setGoals] = useState('strength_power')
 
          const generatorRef =useRef(null)
+          const workoutRef = useRef(null);
 
          function updateWorkout(){
           if(muscles.length <1)
@@ -29,6 +30,19 @@ function App() {
           }
          }
 
+         function scrollToWorkout() {
+          if (workoutRef.current) {
+             workoutRef.current.scrollIntoView({ behavior: 'smooth' })
+          }
+         }
+
+         
+  useEffect(() => {
+    if (workout && workoutRef.current) {
+      workoutRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [workout]);
+
   return (
     <main className='min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-950 text-white text-sm sm:text-base'>
     <Hero onAccept={scrollToGenerator}/>
@@ -41,9 +55,12 @@ function App() {
     goals={goals}
     setGoals={setGoals}
     updateWorkout={updateWorkout}
+    scrollToWorkout={scrollToWorkout}
      />
      </div>
-   {workout && <Workout workout={workout}/> }
+   {workout && (
+    <div ref={workoutRef}> <Workout workout={workout}/> 
+</div> )}
 
     </main>
   )
