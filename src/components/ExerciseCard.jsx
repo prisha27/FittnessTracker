@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 
 export default function ExerciseCard(props) {
     const { exercise, i } = props
-
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     const [setsCompleted, setSetsComplete] = useState(0)
 
+    
     function handleSetIncrement() {
         setSetsComplete((setsCompleted + 1) % 6)
     }
@@ -16,6 +17,15 @@ export default function ExerciseCard(props) {
                     0{i + 1}
                 </h4>
                 <h2 className='capitalize whitespace-nowrap truncate max-w-full text-lg sm:text-xl md:text-2xl flex-1 sm:text-center'>{exercise.name.replaceAll("_", " ")}</h2>
+             
+          <button
+            className='cursor-pointer'
+            aria-label="Exercise video link"
+          >
+            <i className="fa-solid fa-circle-info"></i>
+          </button>
+        
+                
                 <p className='text-sm text-slate-400 capitalize'>{exercise.type}</p>
             </div>
             <div className='flex flex-col'>

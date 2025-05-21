@@ -11,7 +11,7 @@ function App() {
   const [poison, setPoison] = useState('individual')
   const [muscles, setMuscles] = useState([])
   const [goals, setGoals] = useState('strength_power')
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
 
   const generatorRef = useRef(null)
   const workoutRef = useRef(null)
