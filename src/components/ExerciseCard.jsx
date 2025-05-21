@@ -10,7 +10,7 @@ export default function ExerciseCard(props) {
     }
 
     return (
-        <div className='p-4 rounded-md flex flex-col gap-4 bg-slate-950 sm:flex-wrap'>
+        <div className='p-4 rounded-md flex flex-col gap-4 bg-slate-100 text-blue-900 dark:bg-slate-950 dark:text-white sm:flex-wrap'>
             <div className='flex flex-col sm:flex-row sm:items-center sm:flex-wrap gap-x-4'>
                 <h4 className='text-3xl hidden sm:inline sm:text-4xl md:text-5xl font-semibold text-slate-400'>
                     0{i + 1}
@@ -23,7 +23,7 @@ export default function ExerciseCard(props) {
                 <p className='capitalize'>{exercise.muscles.join(' & ')}</p>
             </div>
 
-            { <div className='flex flex-col bg-slate-950 rounded gap-2 '>
+            { <div className='flex flex-colbg-slate-100 text-blue-900 dark:bg-slate-950 dark:text-white rounded gap-2 '>
                 {exercise.description.split('___').map((val) => {
                     return (
                         <div className='text-sm'>

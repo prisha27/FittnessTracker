@@ -69,7 +69,7 @@ description={"Select the workout you want to start with"} />
             setPoison(type)
 
         }} className={
-  `bg-slate-950 border py-4 rounded-lg duration-200 hover:border-green-600 cursor-pointer ${
+  `bg-slate-100 text-blue-900 dark:bg-slate-950 dark:text-white border py-4 rounded-lg duration-200 hover:border-green-600 cursor-pointer ${
     type === poison ? 'border-green-400' : 'border-blue-100'
   }`
 }
@@ -84,7 +84,7 @@ description={"Select the workout you want to start with"} />
   <Header index={'02'} title={'Lock On Targets'}
 description={"Select the muscles judged for annihilation."} />
 <div className='px-8'>
-<div className='bg-slate-950 border border-green-400 flex flex-col
+<div className='bg-slate-100 text-blue-900 dark:bg-slate-950 dark:text-white border-green-400 flex flex-col
 rounded-lg'>
 <button onClick={toggleModal} className=' mx-auto cursor-pointer relative  flex py-3 px-6 items-center justify-center'>
     <p className='capitalize'>{muscles.length == 0 ? 'Select Muscle Group' : muscles.join(', ')}</p>
@@ -119,7 +119,7 @@ description={"Select Your Ultimate Objective"} />
             setGoals(scheme)
 
         }} className={
-  `bg-slate-950 border py-4 rounded-lg duration-200 hover:border-green-600 cursor-pointer ${
+  `bg-slate-100 text-blue-900 dark:bg-slate-950  dark:text-white border py-4 rounded-lg duration-200 hover:border-green-600 cursor-pointer ${
     scheme === goals ? 'border-green-400' : 'border-blue-100'
   }`
 }
