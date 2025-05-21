@@ -5,7 +5,6 @@ export default function ExerciseCard(props) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [setsCompleted, setSetsComplete] = useState(0)
 
-    
     function handleSetIncrement() {
         setSetsComplete((setsCompleted + 1) % 6)
     }
@@ -17,14 +16,28 @@ export default function ExerciseCard(props) {
                     0{i + 1}
                 </h4>
                 <h2 className='capitalize whitespace-nowrap truncate max-w-full text-lg sm:text-xl md:text-2xl flex-1 sm:text-center'>{exercise.name.replaceAll("_", " ")}</h2>
-             
+              <div className="relative inline-block"
+              onMouseEnter={() => setDropdownOpen(true)}
+               onMouseLeave={() => setDropdownOpen(false)}>
           <button
             className='cursor-pointer'
             aria-label="Exercise video link"
           >
             <i className="fa-solid fa-circle-info"></i>
           </button>
-        
+         {dropdownOpen && (
+      <div className="absolute left-0 sm:left-1/2 sm:-translate-x-1/2 mt-2 w-56 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded shadow-lg z-50 transition-all duration-200">
+        <a
+          href={exercise.anyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block px-4 py-2 text-blue-600 dark:text-blue-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          Get More Info
+              </a>
+            </div>
+          )}
+        </div>
                 
                 <p className='text-sm text-slate-400 capitalize'>{exercise.type}</p>
             </div>
